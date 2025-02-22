@@ -1,0 +1,12 @@
+nav {
+    display: flex; 
+    align-items: flex-start; 
+    gap: 1rem;
+  }
+  
+  a {
+    color: black; 
+    font-size: 18px; 
+  }
+  
+  
