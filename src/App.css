@@ -1,12 +1,26 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
+header{
+  display: flex;
+  align-items: left;
+  margin: 0;
+  padding: 0;
+}
+header h3{
+  font-size: 5vw;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
 
-
-.head{
-  background-color: lightblue;
+.logo{
+  display: flex;
+  width: 5vw;
+  height:auto;
+}
+.main{
+  margin:0;
 }
