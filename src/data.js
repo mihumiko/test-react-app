@@ -1,18 +1,21 @@
-import margarita from './assets/margarita.jpg'
-import peperoni from './assets/peperoni.jpg'
-import foursira from './assets/4sira.jpg'
-import gavai from './assets/gavai.jpg'
+import margarita from "./assets/margarita.jpg";
+import peperoni from "./assets/peperoni.jpg";
+import foursira from "./assets/4sira.jpg";
+import gavai from "./assets/gavai.jpg";
 export const products = [
-    {id:1, name: "Маргарита", image: margarita},
-    {id:2, name: "Пеперони", image: peperoni},
-    {id:3, name: "4 сыра", image: foursira},
-    {id:4, name: "Гавайская", image: gavai},
-]   
+  { id: 1, name: "Маргарита", image: margarita },
+  { id: 2, name: "Пеперони", image: peperoni },
+  { id: 3, name: "4 сыра", image: foursira },
+  { id: 4, name: "Гавайская", image: gavai },
+  { id: 5, name: "Гавайская", image: gavai },
+  { id: 5, name: "Гавайская", image: gavai },
+  { id: 5, name: "Гавайская", image: gavai },
+];
 
 export const info = [
-    {
-        name: "about",
-        description: `
+  {
+    name: "about",
+    description: `
 Добро пожаловать в нашу компанию! Мы — команда профессионалов, увлеченных тем, что мы делаем. Наша миссия заключается в том, чтобы предоставлять качественные товары и услуги, которые улучшают жизнь наших клиентов.
 
 Основанная в [год основания], наша компания стремится к инновациям и совершенствованию. Мы работаем с лучшими поставщиками и производителями, чтобы гарантировать, что наши продукты соответствуют самым высоким стандартам качества.
@@ -26,11 +29,11 @@ export const info = [
 
 Спасибо, что выбрали нас! Мы рады помочь вам в любых вопросах и надеемся на долгосрочное сотрудничество.
         `,
-    },
+  },
 
-    {
-        name: "contact",
-        description: `
+  {
+    name: "contact",
+    description: `
 Мы всегда готовы помочь вам! Если у вас возникли вопросы, предложения или вам нужна помощь, пожалуйста, не стесняйтесь обращаться к нам. Мы ценим ваше мнение и готовы предоставить всю необходимую информацию.
 
 **Способы связи:**
@@ -50,6 +53,6 @@ export const info = [
 - [Instagram](#)
 - [Twitter](#)
         
-Спасибо, что выбрали нас! Мы с нетерпением ждем возможности помочь вам.`
-    },
+Спасибо, что выбрали нас! Мы с нетерпением ждем возможности помочь вам.`,
+  },
 ];

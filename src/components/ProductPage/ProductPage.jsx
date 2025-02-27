@@ -1,13 +1,10 @@
 import { useParams } from "react-router-dom";
 import { products } from "../../data";
-import './ProductPage.css'
+//import './ProductPage.css'
 
 export default function ProductPage(){
     const { id } = useParams();
     const product = products.find((p) => p.id === parseInt(id))
-
-    console.log(id)
-    console.log(product)
 
     if (!product){
         return <h2>Товар не найден</h2>;
