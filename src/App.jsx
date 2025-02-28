@@ -1,19 +1,21 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-//import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
-import ProductList from "./components/ProductList/ProductList";
-import ProductPage from "./components/ProductPage/ProductPage";
-import InfoPage from "./components/InfoPage/InfoPage";
+import Footer from "./components/Footer/Footer";
+import { Box } from "@mui/material";
+import RoutesList from "./components/RoutesList/RoutesList";
+
 function App() {
   return (
-    <Router>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh",
+      }}
+    >
       <NavBar />
-      <Routes>
-        <Route path="/" element={<ProductList />} />
-        <Route path="info/:name" element={<InfoPage />} />
-        <Route path="/product/:id" element={<ProductPage />} />
-      </Routes>
-    </Router>
+      <RoutesList />
+      <Footer />
+    </Box>
   );
 }
 export default App;

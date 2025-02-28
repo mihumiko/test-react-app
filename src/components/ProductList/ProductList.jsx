@@ -9,7 +9,6 @@ import {
   Typography,
   Box,
 } from "@mui/material";
-// import "./ProductList.css";
 
 export default function ProductList() {
   return (
@@ -68,18 +67,5 @@ export default function ProductList() {
         ))}
       </Grid2>
     </Box>
-
-    // <div className="grid-container">
-    //   {products.map((product) => (
-    //     <Link
-    //       to={`/product/${product.id}`}
-    //       key={product.id}
-    //       className="product"
-    //     >
-    //       <img src={product.image} alt={product.name} />
-    //       <h2>{product.name}</h2>
-    //     </Link>
-    //   ))}
-    // </div>
   );
 }
