@@ -8,8 +8,6 @@ export default function RoutesList() {
       <Routes>
         {routes.map((route) => {
           const Component = compon[route.element];
-          console.log(route.element);
-          console.log(Component);
           return (
             <Route
               key={route.path}

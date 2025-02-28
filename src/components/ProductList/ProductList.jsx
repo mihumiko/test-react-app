@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
-import { products } from "../../data";
+import { useState, useEffect } from "react";
+import { fetchProductList } from "../../api/ProductListApi";
+import { CircularProgress } from "@mui/material";
 import {
   Grid2,
   Card,
@@ -8,9 +10,40 @@ import {
   CardContent,
   Typography,
   Box,
+  Button,
 } from "@mui/material";
 
 export default function ProductList() {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const loadProducts = async () => {
+      try {
+        const productList = await fetchProductList();
+        setProducts(productList);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadProducts();
+  }, []);
+
+  if (loading) {
+    return <CircularProgress />;
+  }
+
+  if (error) {
+    return <h2>{error}</h2>;
+  }
+
+  if (!products) {
+    return <h2>Товар не найден</h2>;
+  }
+
   return (
     <Box
       sx={{
@@ -36,15 +69,7 @@ export default function ProductList() {
             display="flex"
             justifyContent="center"
           >
-            <Card
-              sx={{
-                borderRadius: 2,
-                boxShadow: 3,
-                backgroundColor: "transparent",
-                maxWidth: 300, // Ограничение ширины карточки
-                width: "100%",
-              }}
-            >
+            <Card sx={{ backgroundColor: "transparent" }}>
               <CardActionArea component={Link} to={`/product/${product.id}`}>
                 <CardMedia
                   component="img"
@@ -56,12 +81,31 @@ export default function ProductList() {
                     objectFit: "cover",
                   }}
                 />
-                <CardContent>
-                  <Typography variant="h6" align="center">
-                    {product.name}
-                  </Typography>
-                </CardContent>
               </CardActionArea>
+              <CardContent
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Typography variant="h6">{product.name}</Typography>
+                <Button
+                  color="primary"
+                  variant="contained"
+                  size="large"
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    console.log("Добавлено в корзину", product.name);
+                  }}
+                  sx={{
+                    marginLeft: "auto",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  Добавить
+                </Button>
+              </CardContent>
             </Card>
           </Grid2>
         ))}

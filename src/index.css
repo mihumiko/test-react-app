@@ -3,7 +3,7 @@
   line-height: 1.5;
   font-weight: 400;
   /* color: rgba(255, 255, 255, 0.87); */
-  background-color: #5c5c5c;
+  background-color: #141514;
 }
 
 a {
@@ -13,4 +13,8 @@ a {
 
 a:hover {
   color: rgb(89, 94, 98);
+}
+
+ul {
+  text-align: left;
 }
