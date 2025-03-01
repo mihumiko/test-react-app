@@ -100,6 +100,7 @@ export default function ProductList() {
                   }}
                   sx={{
                     marginLeft: "auto",
+
                     whiteSpace: "nowrap",
                   }}
                 >
